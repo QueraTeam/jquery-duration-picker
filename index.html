@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
+    <script type="text/javascript" src="src/jquery-duration-picker.js"></script>
+    <title></title>
+    <style>
+        h3.ui.center.header {
+            margin-top: 2em;
+            padding: 2em 0em;
+        }
+    </style>
+</head>
+<body>
+
+<h3 class="ui center aligned header">Jquery Duration Picker</h3>
+
+<div class="ui container">
+    <div class="ui input">
+        <input type="text" placeholder="Pick Duration..." class="duration-picker" value="12d5h4m15s">
+    </div>
+    <div class="ui input">
+        <input type="text" placeholder="Pick Duration..." class="duration-picker" value="12d58h4m15s">
+    </div>
+</div>
+
+
+
+<script>
+    $('.duration-picker').duration_picker();
+</script>
+
+</body>
+</html>
