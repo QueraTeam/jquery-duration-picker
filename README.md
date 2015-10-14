@@ -6,7 +6,9 @@ I wrote this to use in Quera (https://quera.ir).
 
 ## Example
 
-![jQuery](img.png)
+![jQuery-Duration-Picker](img1.png)
+
+![jQuery-Duration-Picker](img2.png)
 
 ## Installation
 

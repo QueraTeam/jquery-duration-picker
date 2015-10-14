@@ -15,16 +15,17 @@
         }
     </style>
 </head>
-<body>
+<body lang="ar">
 
 <h3 class="ui center aligned header">Jquery Duration Picker</h3>
 
 <div class="ui container">
     <div class="ui input">
-        <input type="text" placeholder="Pick Duration..." class="duration-picker" value="1450">
+        <input type="text" placeholder="Pick Duration..." id="dp1" value="1450">
     </div>
-    <div class="ui input">
-        <input type="text" placeholder="Pick Duration..." class="duration-picker" value="100000">
+    <br/><br/>
+    <div lang="fa" class="ui input" style="font-family: 'B Nazanin', sans-serif; font-size: 16px;">
+        <input type="text" placeholder="Pick Duration..." id="dp2" value="100000">
     </div>
 </div>
 
@@ -39,9 +40,10 @@
         }
         return str;
     }
-    $('.duration-picker').duration_picker({
-        lang: 'en',
-//        formatter: persian_digits
+    $('#dp1').duration_picker();
+    $('#dp2').duration_picker({
+        lang: 'fa',
+        formatter: persian_digits
     });
 </script>
 
