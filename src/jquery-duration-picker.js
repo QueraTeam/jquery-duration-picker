@@ -33,6 +33,9 @@
         this.each(function (i, e) {
 
             e = $(e);
+            
+            if (e.data('jdp') === '1')
+                return;
 
             var e2 = $('<div class="jdp-input">' +
                 '<div class="jdp-block">' +
@@ -53,7 +56,7 @@
                 '</div>' +
             '</div>');
 
-            e.after(e2).hide();
+            e.after(e2).hide().data('jdp', '1');
 
             var days = 0;
             var hours = 0;
