@@ -1,8 +1,18 @@
 # jquery-duration-picker
 
-This is a small library for using in Quera (https://quera.ir)
+This is a small library for picking time durations in javascript.
+
+I wrote this to use in Quera (https://quera.ir).
+
+## Example
 
 ![jQuery](img.png)
+
+## Installation
+
+```
+bower install jquery-duration-picker
+```
 
 ## Usage
 
