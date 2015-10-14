@@ -141,7 +141,7 @@
                 $('<div class="ui small transparent input"> ' + langs[settings.lang]['minutes'] + '</div>').prepend(minute_input).appendTo(picker);
                 var second_input = num_input.clone().attr('max', 59).change(picker_changed);
                 $('<div class="ui small transparent input"> ' + langs[settings.lang]['seconds'] + '</div>').prepend(second_input).appendTo(picker);
-                $('body').append(picker);
+                e.after(picker);
                 e2.popup({
                     on: 'click',
                     position: 'bottom center',
