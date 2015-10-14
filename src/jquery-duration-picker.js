@@ -34,7 +34,7 @@
 
             e = $(e);
 
-            var e2 = $('<div class="ui input jdp-input">' +
+            var e2 = $('<div class="jdp-input">' +
                 '<div class="jdp-block">' +
                     '<span id="jdp-days"></span><br>' +
                     '<span class="jdp-label" id="days_label"></span>' +
