@@ -1,1 +1,1 @@
-.jdp-input{border-radius:.28571429rem;padding:0 3px;border:1px solid rgba(34,36,38,.15)}.jdp-input.disabled{color:#AAA}.jdp-block{display:inline-block;line-height:1;text-align:center;padding:5px 3px}.jdp-label{font-size:70%}
+.jdp-input{border-radius:.28571429rem;padding:0 3px;border:1px solid rgba(34,36,38,.15);cursor:text}.jdp-input.disabled{color:#AAA;cursor:default}.jdp-block{display:inline-block;line-height:1;text-align:center;padding:5px 3px}.jdp-label{font-size:70%}

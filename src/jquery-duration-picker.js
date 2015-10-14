@@ -105,11 +105,9 @@
             }
 
             function init() {
-                var total;
-                if (e.val() !== '')
-                    total = parseInt(e.val(), 10);
-                else
-                    total = 0;
+                if (e.val() === '')
+                    e.val(0);
+                var total = parseInt(e.val(), 10);
                 seconds = total % 60;
                 total = Math.floor(total/60);
                 minutes = total % 60;
