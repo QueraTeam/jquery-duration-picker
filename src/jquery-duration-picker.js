@@ -69,6 +69,7 @@
             function update_e() {
                 var total = seconds + minutes * 60 + hours * 60 * 60 + days * 24 * 60 * 60;
                 e.val(total);
+                e.change();
             }
             
             function update_e2() {
