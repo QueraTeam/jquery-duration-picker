@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.js"></script>
-    <script type="text/javascript" src="src/jquery-duration-picker.js"></script>
-    <title></title>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="bower_components/semantic/dist/semantic.min.css"/>
+    <script type="text/javascript" src="bower_components/semantic/dist/semantic.min.js"></script>
+    <script type="text/javascript" src="dist/jquery-duration-picker.min.js"></script>
+    <link rel="stylesheet" href="dist/jquery-duration-picker.min.css"/>
+    <title>jQuery Duration Picker</title>
     <style>
         h3.ui.center.header {
             margin-top: 2em;
@@ -21,17 +21,28 @@
 
 <div class="ui container">
     <div class="ui input">
-        <input type="text" placeholder="Pick Duration..." class="duration-picker" value="12d5h4m15s">
+        <input type="text" placeholder="Pick Duration..." class="duration-picker" value="1450">
     </div>
     <div class="ui input">
-        <input type="text" placeholder="Pick Duration..." class="duration-picker" value="12d58h4m15s">
+        <input type="text" placeholder="Pick Duration..." class="duration-picker" value="100000">
     </div>
 </div>
 
 
-
 <script>
-    $('.duration-picker').duration_picker();
+    function persian_digits(str) {
+        str = '' + str;
+        var englishDigits = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
+                persianDigits = ["۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹", "۰"];
+        for (var i = 0, numbersLen = englishDigits.length; i < numbersLen; i++) {
+            str = str.replace(new RegExp(englishDigits[i], "g"), persianDigits[i]);
+        }
+        return str;
+    }
+    $('.duration-picker').duration_picker({
+        lang: 'en',
+//        formatter: persian_digits
+    });
 </script>
 
 </body>
