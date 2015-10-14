@@ -60,6 +60,12 @@
             var minutes = 0;
             var seconds = 0;
 
+            var disabled = false;
+            if (e.hasClass('disabled') || e.attr('disabled')=='disabled') {
+                disabled = true;
+                e2.addClass('disabled');
+            }
+
             function update_e() {
                 var total = seconds + minutes * 60 + hours * 60 * 60 + days * 24 * 60 * 60;
                 e.val(total);
@@ -89,6 +95,8 @@
             }
             
             function update_picker() {
+                if (disabled)
+                    return;
                 day_input.val(days);
                 hour_input.val(hours);
                 minute_input.val(minutes);
@@ -101,7 +109,6 @@
                     total = parseInt(e.val(), 10);
                 else
                     total = 0;
-                console.log(total);
                 seconds = total % 60;
                 total = Math.floor(total/60);
                 minutes = total % 60;
@@ -121,24 +128,27 @@
                 update_e2();
             }
 
-            var picker = $('<div class="ui custom popup top left transition hidden"></div>').css('width', 110);
-            var num_input = $('<input style="width: 40px;" type="number" min="0" value="0">');
-            var day_input = num_input.clone().change(picker_changed);
-            $('<div class="ui small transparent input"> ' + langs[settings.lang]['days'] + '</div>').prepend(day_input).appendTo(picker);
-            var hour_input = num_input.clone().attr('max', 23).change(picker_changed);
-            $('<div class="ui small transparent input"> ' + langs[settings.lang]['hours'] + '</div>').prepend(hour_input).appendTo(picker);
-            var minute_input = num_input.clone().attr('max', 59).change(picker_changed);
-            $('<div class="ui small transparent input"> ' + langs[settings.lang]['minutes'] + '</div>').prepend(minute_input).appendTo(picker);
-            var second_input = num_input.clone().attr('max', 59).change(picker_changed);
-            $('<div class="ui small transparent input"> ' + langs[settings.lang]['seconds'] + '</div>').prepend(second_input).appendTo(picker);
-            $('body').append(picker);
+            if (!disabled) {
+                var picker = $('<div class="ui custom popup top left transition hidden"></div>').css('width', 110);
+                var num_input = $('<input style="width: 40px;" type="number" min="0" value="0">');
+                var day_input = num_input.clone().change(picker_changed);
+                $('<div class="ui small transparent input"> ' + langs[settings.lang]['days'] + '</div>').prepend(day_input).appendTo(picker);
+                var hour_input = num_input.clone().attr('max', 23).change(picker_changed);
+                $('<div class="ui small transparent input"> ' + langs[settings.lang]['hours'] + '</div>').prepend(hour_input).appendTo(picker);
+                var minute_input = num_input.clone().attr('max', 59).change(picker_changed);
+                $('<div class="ui small transparent input"> ' + langs[settings.lang]['minutes'] + '</div>').prepend(minute_input).appendTo(picker);
+                var second_input = num_input.clone().attr('max', 59).change(picker_changed);
+                $('<div class="ui small transparent input"> ' + langs[settings.lang]['seconds'] + '</div>').prepend(second_input).appendTo(picker);
+                $('body').append(picker);
+                e2.popup({
+                    on: 'click',
+                    position: 'bottom center',
+                    exclusive: true,
+                    popup: picker
+                });
+            }
             init();
-            e2.popup({
-                on: 'click',
-                position: 'bottom center',
-                exclusive: true,
-                popup: picker
-            });
+            e.change(init);
         });
 
     };

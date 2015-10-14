@@ -27,6 +27,10 @@
     <div lang="fa" class="ui input" style="font-family: 'B Nazanin', sans-serif; font-size: 16px;">
         <input type="text" placeholder="Pick Duration..." id="dp2" value="100000">
     </div>
+    <br/><br/>
+    <div class="ui input">
+        <input type="text" placeholder="Pick Duration..." disabled id="dp3" value="1450">
+    </div>
 </div>
 
 
@@ -45,6 +49,7 @@
         lang: 'fa',
         formatter: persian_digits
     });
+    $('#dp3').duration_picker();
 </script>
 
 </body>
