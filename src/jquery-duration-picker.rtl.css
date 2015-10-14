@@ -1,4 +1,5 @@
 .jdp-input {
+    direction: rtl;
     border-radius: .28571429rem;
     padding: 0 3px;
     border: 1px solid rgba(34, 36, 38, .15);

@@ -15,6 +15,9 @@ gulp.task('build', function () {
     gulp.src('src/jquery-duration-picker.css').pipe(mincss({compatibility: 'ie8'}))
         .pipe(rename('jquery-duration-picker.min.css'))
         .pipe(gulp.dest('dist'));
+    gulp.src('src/jquery-duration-picker.rtl.css').pipe(mincss({compatibility: 'ie8'}))
+        .pipe(rename('jquery-duration-picker.rtl.min.css'))
+        .pipe(gulp.dest('dist'));
 });
 
 // The default task (called when you run `gulp` from cli)
